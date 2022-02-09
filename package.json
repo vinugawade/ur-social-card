@@ -1,0 +1,39 @@
+{
+  "name": "social-card",
+  "version": "1.0.0",
+  "description": "Get all your's social media link at one place.",
+  "main": "app.js",
+  "scripts": {
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinugawade/social-card.git"
+  },
+  "keywords": [
+    "social-media",
+    "css",
+    "html",
+    "js",
+    "npm",
+    "QR"
+  ],
+  "author": "Vinay Gawade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinugawade/social-card/issues"
+  },
+  "homepage": "https://github.com/vinugawade/social-card#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "read-write-json": "^1.0.5",
+    "sass": "^1.49.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2",
+    "npm-run-all": "^4.1.5"
+  }
+}
