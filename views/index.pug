@@ -1,10 +1,40 @@
 doctype html
 html
     head
-        title Hello World
-        meta(charset="utf-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-        link(rel="stylesheet", href="./css/style.css")
-    body
-        p.font-bold.m-5 Hello #{name}!
+        title Profile
+        meta(charset = "utf-8")
+        meta(http-equiv = "X-UA-Compatible", content = "IE = edge")
+        meta(name = "viewport", content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0")
+        link(rel = "stylesheet", href = "./css/style.css")
+        link(rel = "stylesheet", href = "./js/main.js")
+    body(class="font-serif bg-yellow-400")
+    div(class="container p-16")
+        div(class="w-50 rounded-xl bg-white max-w-2xl mx-auto p-10")
+            h1(class="justify-center") Register UR Self!
+            form(action = "/add_profile", method = "POST", class="grid justify-center")
+                div(class="grid gap-4 grid-cols-2 grid-rows-1 mb-6")
+                    img(class="h-32 w-32 object-cover", src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80", alt="Current profile photo")
+                    input(type="file",name = "profile_photo", class="w-full self-center")
+                div(class="grid gap-4 grid-cols-3 grid-rows-1 mb-6")
+                    input(type = "text", name = "first_name", placeholder = "First Name", class="border-0 border-b-2 border-gray-300")
+                    input(type = "text", name = "middle_name", placeholder = "Middle Name", class="border-0 border-b-2 border-gray-300")
+                    input(type = "text", name = "last_name", placeholder = "Last Name", class="border-0 border-b-2 border-gray-300")
+                div(class="grid gap-4 grid-cols-2 grid-rows-1 mb-6 h-20")
+                    label(for = "dob", class="") Date of Birth
+                        input(type = "date", name = "dob", id = "dob", class="w-full")
+                    label(for = "user_type", class="") Select Your Type
+                        select(name="type", id="user_type", class="w-full")
+                            option Here
+                            option(value="General") General
+                            option(value="Developer") Developer
+                label(for = "user_type", class="") Profile Links
+                div(id="General mb-6")
+                    input(type="url", name="insta", placeholder="Instagram", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                    input(type="url", name="fb", placeholder="Facebook", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                    input(type="url", name="twit", placeholder="Twitter", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                    input(type="url", name="wp", placeholder="What's App", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                div(id="Developer mb-6")
+                    input(type="url", name="github", placeholder="Github", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                    input(type="url", name="linkedin", placeholder="LinkedIn", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                    input(type="url", name="stack", placeholder="Stack OverFlow", class="w-full mb-6 border-0 border-b-2 border-gray-300")
+                button(type="submit", class="bg-blue-600 py-3 text-lg text-white text-") Submit
