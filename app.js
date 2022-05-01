@@ -13,6 +13,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.post('/add_profile', (req, res) => {
+    res.render('QR', {
+        name: 'Vinu'
+    });
+});
+
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
 });
