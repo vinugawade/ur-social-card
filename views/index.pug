@@ -7,10 +7,11 @@ html
         meta(name = "viewport", content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0")
         script(src="https://kit.fontawesome.com/a2e3f3a679.js", crossorigin="anonymous")
         link(rel = "stylesheet", href = "./css/style.css")
-    body(class="font-serif bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500")
+        link(rel="shortcut icon", href="./img/logo.png", type="image/x-icon")
+    body(class="font-serif bg-gradient-to-r from-blue-500 via-purple-500  to-pink-500")
     div(class="container p-16")
         div(class="w-50 rounded-xl bg-white max-w-2xl mx-auto p-10")
-            p(class="text-3xl mb-6 text-center") Register URSelf
+            p(class="text-3xl mb-6 text-center") Register UR-Self
             form(action = "/add_profile", method = "POST", class="grid justify-center")
                 div(class="grid gap-4 grid-cols-2 grid-rows-1 mb-6")
                     img(class="h-32 w-32 object-fill", id="dest_photo" src="./img/user_img.png", alt="Current profile photo")
