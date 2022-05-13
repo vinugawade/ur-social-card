@@ -15,17 +15,17 @@ html
             form(action = "/add_profile", method = "POST", class="grid justify-center")
                 div(class="grid gap-4 grid-cols-2 grid-rows-1 mb-6")
                     img(class="h-32 w-32 object-fill", id="dest_photo" src="./img/user_img.png", alt="Current profile photo")
-                    input(type="file",name = "profile_photo", id="src_photo", class="w-full self-center")
+                    input(type="file",name = "profile_photo", id="src_photo", class="w-full self-center" required)
                 div(class="grid gap-4 grid-cols-3 grid-rows-1 mb-6")
-                    input(type = "text", name = "first_name", placeholder = "First Name", class="border-0 border-b-2 border-gray-200")
-                    input(type = "text", name = "middle_name", placeholder = "Middle Name", class="border-0 border-b-2 border-gray-200")
-                    input(type = "text", name = "last_name", placeholder = "Last Name", class="border-0 border-b-2 border-gray-200")
+                    input(type = "text", name = "first_name", placeholder = "First Name", class="border-0 border-b-2 border-gray-200" required)
+                    input(type = "text", name = "middle_name", placeholder = "Middle Name", class="border-0 border-b-2 border-gray-200" required)
+                    input(type = "text", name = "last_name", placeholder = "Last Name", class="border-0 border-b-2 border-gray-200" required)
                 div(class="grid gap-4 grid-cols-2 grid-rows-1 mb-6 h-20")
-                    label(for = "dob", class="") Date of Birth
-                        input(type = "date", name = "dob", id = "dob", class="w-full")
-                    label(for = "user_type", class="") Select Your Type
-                        select(name="type", id="user_type", class="w-full")
-                            option Here
+                    label(for = "dob") Date of Birth
+                        input(type = "date", name = "dob", id = "dob", class="w-full" required)
+                    label(for = "user_type") Select Your Type
+                        select(name="type", id="user_type", class="w-full" required)
+                            option(value="") Here
                             option(value="General") General
                             option(value="Developer") Developer
                 //- label(for = "user_type", class="mb-6") Profile Links
@@ -33,32 +33,32 @@ html
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-instagram fa-1x")
-                        input(type="url", name="insta", placeholder="Instagram Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="insta", placeholder="Instagram Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-facebook fa-1x")
-                        input(type="url", name="fb", placeholder="Facebook Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="fb", placeholder="Facebook Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-twitter fa-1x")
-                        input(type="url", name="twit", placeholder="Twitter Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="twit", placeholder="Twitter Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-whatsapp fa-1x")
-                        input(type="url", name="wp", placeholder="What's App Number", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="phone", name="wp", placeholder="What's App Number", class="w-full p-3 border-0 border-b-2 border-gray-200" pattern="^[0-9]{10}$")
                 div(id="Developer" class="mb-6 hidden")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-github fa-1x")
-                        input(type="url", name="github", placeholder="Github Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="github", placeholder="Github Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-linkedin fa-1x")
-                        input(type="url", name="linkedin", placeholder="LinkedIn Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="linkedin", placeholder="LinkedIn Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                     div(class="flex mb-6")
                         span(class="inline-flex items-center px-3 text-lg bg-gray-200")
                             i(class="fa-brands fa-stack-overflow fa-1x")
-                        input(type="url", name="stack", placeholder="Stack OverFlow Profile Link", class="w-full border-0 border-b-2 border-gray-200")
+                        input(type="url", name="stack", placeholder="Stack OverFlow Profile Link", class="w-full p-3 border-0 border-b-2 border-gray-200")
                 button(type="submit", class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-lg px-5 py-2.5 focus:outline-none") Generate&nbsp;
                     i(class="fa-solid fa-angles-right fa-md")
 
