@@ -15,7 +15,7 @@ html
             form(action = "/add_profile", method = "POST", class = "grid justify-center", enctype = "multipart/form-data")
                 div(class = "grid gap-4 grid-cols-2 grid-rows-1 mb-6")
                     img(class = "h-32 w-32 object-fill", id = "dest_photo" src = "./img/user_img.png", alt="Current profile photo")
-                    input(type = "file",name = "profile_photo", id = "src_photo", class = "w-full self-center", required)
+                    input(type = "file",name = "profile_photo", id = "src_photo", class = "w-full self-center", accept=".png, .jpg, .jpeg", required)
                 div(class = "grid gap-4 grid-cols-3 grid-rows-1 mb-6")
                     input(type = "text", name = "first_name", placeholder = "First Name", class = "border-0 border-b-2 border-gray-200", required)
                     input(type = "text", name = "middle_name", placeholder = "Middle Name", class = "border-0 border-b-2 border-gray-200", required)

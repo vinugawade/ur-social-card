@@ -39,7 +39,7 @@ app.post('/add_profile', upload.single('profile_photo'), (req, res, next) => {
   const url = imgbbUploader(process.env.IMG_API_KEY, req.file.path)
     .then((respond) => {
       fs.unlinkSync(req.file.path);
-      return respond.display_url
+      return respond.display_url;
     });
 
   const save_user = async () => {
@@ -61,9 +61,11 @@ app.post('/add_profile', upload.single('profile_photo'), (req, res, next) => {
         stack: req.body.stack
       };
       res.cookie('you', user).send();
+      return true;
     });
   };
-  save_user();
+  if(save_user()){
+  }
 });
 
 app.get('/card', (req, res) => {
