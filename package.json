@@ -44,6 +44,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "browserslist": "^4.21.10",
+    "caniuse-lite": "^1.0.30001521",
     "nodemon": "^2.0.15"
   }
 }
