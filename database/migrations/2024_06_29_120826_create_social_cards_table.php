@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('social_cards', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->string('name');
+            $table->string('url');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
