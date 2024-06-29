@@ -5,7 +5,6 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Devdojo\Auth\Models\User as AuthUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -52,11 +51,6 @@ class User extends AuthUser
         'profile_photo_url',
     ];
 
-    public function socialcard(): HasMany
-    {
-        return $this->hasMany(SocialCard::class);
-    }
-
     /**
      * Get the attributes that should be cast.
      *
@@ -68,5 +62,13 @@ class User extends AuthUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function socialCard(): HasMany
+    {
+        return $this->hasMany(SocialCard::class);
     }
 }

@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\SocialCard;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\socialCard>
+ * @extends Factory<SocialCard>
  */
 class SocialCardFactory extends Factory
 {
@@ -18,7 +19,7 @@ class SocialCardFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->userName(),
             'user_id' => User::factory(),
             'url' => $this->faker->url(),
             'active' => $this->faker->boolean(100),

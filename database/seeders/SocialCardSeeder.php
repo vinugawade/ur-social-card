@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\SocialCard;
 use Illuminate\Database\Seeder;
 
 class SocialCardSeeder extends Seeder
@@ -12,6 +12,7 @@ class SocialCardSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        SocialCard::factory()->create();
+//        SocialCardFactory::new()->create();
     }
 }
