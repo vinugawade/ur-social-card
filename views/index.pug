@@ -2,64 +2,57 @@ doctype html
 html
     head
         title Profile
-        meta(charset = "utf-8")
-        meta(http-equiv = "X-UA-Compatible", content = "IE = edge")
-        meta(name = "viewport", content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0")
-        script(src = "https://kit.fontawesome.com/a2e3f3a679.js", crossorigin = "anonymous")
-        link(rel = "stylesheet", href = "./css/style.css")
-        link(rel = "shortcut icon", href="./img/logo.png", type = "image/x-icon")
-    body(class = "font-serif bg-gradient-to-r from-blue-500 via-purple-500  to-pink-500")
-    div(class = "container p-16")
-        div(class = "w-50 rounded-xl bg-white max-w-2xl mx-auto p-10")
-            p(class = "text-3xl mb-6 text-center") Register UR-Self
-            form(action = "/add_profile", method = "POST", class = "grid justify-center", enctype = "multipart/form-data")
-                div(class = "grid gap-4 grid-cols-2 grid-rows-1 mb-6")
-                    img(class = "h-32 w-32 object-fill", id = "dest_photo" src = "./img/user_img.png", alt="Current profile photo")
-                    input(type = "file",name = "profile_photo", id = "src_photo", class = "w-full self-center", accept=".png, .jpg, .jpeg", required)
-                div(class = "grid gap-4 grid-cols-3 grid-rows-1 mb-6")
-                    input(type = "text", name = "first_name", placeholder = "First Name", class = "border-0 border-b-2 border-gray-200", required)
-                    input(type = "text", name = "middle_name", placeholder = "Middle Name", class = "border-0 border-b-2 border-gray-200", required)
-                    input(type = "text", name = "last_name", placeholder = "Last Name", class = "border-0 border-b-2 border-gray-200", required)
-                div(class = "grid gap-4 grid-cols-2 grid-rows-1 mb-6 h-20")
-                    label(for = "dob") Date of Birth
-                        input(type = "date", name = "dob", id = "dob", class = "w-full", required)
-                    label(for = "user_type") Select Your Type
-                        select(name = "type", id = "user_type", class = "w-full", required)
-                            option(value = "") Here
-                            option(value = "General") General
-                            option(value = "Developer") Developer
-                //- label(for = "user_type", class = "mb-6") Profile Links
-                div(id = "General" class = "mb-6 hidden")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-instagram fa-1x")
-                        input(type = "url", name = "insta", placeholder = "Instagram Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-facebook fa-1x")
-                        input(type = "url", name = "fb", placeholder = "Facebook Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-twitter fa-1x")
-                        input(type = "url", name = "twit", placeholder = "Twitter Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-whatsapp fa-1x")
-                        input(type = "phone", name = "wp", placeholder = "What's App Number", class = "w-full p-3 border-0 border-b-2 border-gray-200", pattern="^[0-9]{10}$")
-                div(id = "Developer" class = "mb-6 hidden")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-github fa-1x")
-                        input(type = "url", name = "github", placeholder = "Github Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-linkedin fa-1x")
-                        input(type = "url", name = "linkedin", placeholder = "LinkedIn Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                    div(class = "flex mb-6")
-                        span(class = "inline-flex items-center px-3 text-lg bg-gray-200")
-                            i(class = "fa-brands fa-stack-overflow fa-1x")
-                        input(type = "url", name = "stack", placeholder = "Stack OverFlow Profile Link", class = "w-full p-3 border-0 border-b-2 border-gray-200")
-                button(type = "submit", class = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-lg px-5 py-2.5 focus:outline-none") Generate&nbsp;
-                    i(class = "fa-solid fa-angles-right fa-md")
-
-    script(src = "./js/main.js")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+        script(src="https://kit.fontawesome.com/a2e3f3a679.js", crossorigin="anonymous")
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./img/logo.png", type="image/x-icon")
+    body(class="font-serif bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500")
+        div(class="container p-6 mx-auto")
+            div(class="max-w-md mx-auto bg-white rounded-xl p-6")
+                p(class="text-3xl mb-6 text-center font-bold") Register UR-Self
+                form(action="/add_profile" method="POST" class="grid gap-6")
+                    div(class="grid gap-4")
+                        label(class="flex items-center justify-center bg-gray-200 rounded-xl h-32")
+                            img(class="h-24 w-24", id="dest_photo", src="./img/user_img.png", alt="Current profile photo")
+                            input(type="file", name="profile_photo", id="src_photo", class="hidden", accept=".png, .jpg, .jpeg" required)
+                    div(class="grid gap-4 md:grid-cols-2")
+                        input(type="text", name="first_name", placeholder="First Name", class="border-b-2 border-gray-200" required)
+                        input(type="text", name="middle_name", placeholder="Middle Name", class="border-b-2 border-gray-200" required)
+                        input(type="text", name="last_name", placeholder="Last Name", class="border-b-2 border-gray-200" required)
+                    div(class="grid gap-4 md:grid-cols-2")
+                        label(for="dob") Date of Birth
+                        input(type="date", name="dob", id="dob", class="border-b-2 border-gray-200", required)
+                        label(for="user_type") Select Your Type
+                        select(name="type", id="user_type", class="border-b-2 border-gray-200", required)
+                            option(value="") Here
+                            option(value="General") General
+                            option(value="Developer") Developer
+                    div(id="General" class="hidden")
+                        div(grid gap-4)
+                            label(for="insta") Instagram Profile Link
+                            input(type="url", name="insta", id="insta", placeholder="Instagram Profile Link", class="border-b-2 border-gray-200")
+                        div(grid gap-4)
+                            label(for="fb") Facebook Profile Link
+                            input(type="url", name="fb", id="fb", placeholder="Facebook Profile Link", class="border-b-2 border-gray-200")
+                        div(grid gap-4)
+                            label(for="twit") Twitter Profile Link
+                            input(type="url", name="twit", id="twit", placeholder="Twitter Profile Link", class="border-b-2 border-gray-200")
+                        div(grid gap-4)
+                            label(for="wp") WhatsApp Number
+                            input(type="tel", name="wp", id="wp", placeholder="WhatsApp Number", class="border-b-2 border-gray-200", pattern="^[0-9]{10}$")
+                    div(id="Developer" class="hidden")
+                        div(grid gap-4)
+                            label(for="github") GitHub Profile Link
+                            input(type="url", name="github", id="github", placeholder="GitHub Profile Link", class="border-b-2 border-gray-200")
+                        div(grid gap-4)
+                            label(for="linkedin") LinkedIn Profile Link
+                            input(type="url", name="linkedin", id="linkedin", placeholder="LinkedIn Profile Link", class="border-b-2 border-gray-200")
+                        div(grid gap-4)
+                            label(for="stackoverflow") Stack Overflow Profile Link
+                            input(type="url", name="stackoverflow", id="stackoverflow", placeholder="Stack Overflow Profile Link", class="border-b-2 border-gray-200")
+                    button(type="submit", class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg")
+                        | Generate
+                        i(class="fas fa-angle-right fa-md")
+        script(src="./js/main.js")

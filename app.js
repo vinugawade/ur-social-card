@@ -7,7 +7,7 @@ const multer = require('multer');
 const imgbbUploader = require("imgbb-uploader");
 const { v4: uuidv4 } = require('uuid');
 const bodyParser = require('body-parser');
-const port = 8080;
+const port = 1234;
 const app = express();
 
 var storage = multer.diskStorage({
