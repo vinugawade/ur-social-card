@@ -3,19 +3,19 @@ type: laravel
 docroot: public
 php_version: "8.2"
 webserver_type: nginx-fpm
-xdebug_enabled: false
-additional_hostnames: []
-additional_fqdns: []
+xdebug_enabled: true
+additional_hostnames: [ ]
+additional_fqdns: [ ]
 database:
-    type: mariadb
-    version: "10.11"
+  type: mariadb
+  version: "10.11"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment: [ ]
 corepack_enable: false
 
-# router_http_port: <port>  # Port to be used for http (defaults to global configuration, usually 80)
-# router_https_port: <port> # Port for https (defaults to global configuration, usually 443)
+router_http_port: "8080"  # Port to be used for http (defaults to global configuration, usually 80)
+router_https_port: "8443" # Port for https (defaults to global configuration, usually 443)
 
 # Key features of DDEV's config.yaml:
 
